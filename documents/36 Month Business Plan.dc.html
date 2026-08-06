@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="./doc-page.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
+  doc-page:not(:defined) { visibility: hidden; }
+  a { color: #1f6f7a; text-decoration: none; }
+  a:hover { color: #16545d; text-decoration: underline; }
+</style>
+</helmet>
+
+<doc-page size="a4" orientation="landscape">
+
+  <section class="page" data-screen-label="01 Business plan" style="background:#f7f6f3;font-family:Figtree,system-ui,sans-serif;color:#12242c;padding:12mm 13mm 10mm;display:flex;flex-direction:column">
+
+    <div style="display:flex;align-items:baseline;gap:6mm;padding-bottom:4mm;border-bottom:1px solid #ddd9cd">
+      <span style="font-family:Newsreader,serif;font-size:16pt;font-weight:600">RuffRooms<span style="font-family:'IBM Plex Mono',monospace;font-size:8pt;color:#8b979b">.ie</span></span>
+      <span style="margin-left:auto;font:600 8pt/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8b979b">36 month business plan</span>
+    </div>
+
+    <h1 style="font-family:Newsreader,serif;font-weight:400;font-size:22pt;line-height:1.12;letter-spacing:-.02em;margin:6mm 0 0">From trusted directory to Ireland’s dog-friendly travel platform</h1>
+    <p style="margin:3mm 0 0;font-size:9.5pt;line-height:1.5;color:#5c6b70;max-width:62em">Three phases, each one paying for the next: build trust and search visibility first, hand control to businesses second, become the platform third.</p>
+
+    <div style="margin-top:6mm;border:1px solid #ddd9cd;border-radius:2.5mm;overflow:hidden;background:#fff">
+      <div style="display:grid;grid-template-columns:30mm 38mm 1fr 1fr 44mm 44mm;background:#0f2b33;color:#fff">
+        <sc-for list="{{ heads }}" as="h" hint-placeholder-count="6">
+          <div style="padding:3.5mm 3mm;font:600 7.5pt/1.3 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#7fd0c6;border-left:1px solid rgba(255,255,255,.12)">{{ h }}</div>
+        </sc-for>
+      </div>
+
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="3">
+        <div style="display:grid;grid-template-columns:30mm 38mm 1fr 1fr 44mm 44mm;border-top:1px solid #e8e6de;background:{{ r.bg }};break-inside:avoid">
+          <div style="padding:4mm 3mm;border-left:4px solid {{ r.accent }}">
+            <div style="font:700 7.5pt/1 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:{{ r.accent }}">{{ r.phase }}</div>
+            <div style="font-family:Newsreader,serif;font-size:13pt;font-weight:600;line-height:1.15;margin-top:2mm">{{ r.name }}</div>
+            <div style="font-size:8pt;color:#7b8a8f;margin-top:1.5mm">{{ r.window }}</div>
+          </div>
+          <div style="padding:4mm 3mm;border-left:1px solid #eeece5;font-size:8.5pt;line-height:1.45;font-weight:600;color:#2c3d43">{{ r.objective }}</div>
+          <div style="padding:4mm 3mm;border-left:1px solid #eeece5;font-size:8pt;line-height:1.45;color:#3d4f55">{{ r.web }}</div>
+          <div style="padding:4mm 3mm;border-left:1px solid #eeece5;font-size:8pt;line-height:1.45;color:#3d4f55">{{ r.portal }}</div>
+          <div style="padding:4mm 3mm;border-left:1px solid #eeece5;font-size:8pt;line-height:1.45;color:#3d4f55">{{ r.admin }}</div>
+          <div style="padding:4mm 3mm;border-left:1px solid #eeece5;font-size:8pt;line-height:1.45;color:#3d4f55;background:#faf6f4">{{ r.money }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="margin-top:auto;padding-top:5mm;display:flex;flex-wrap:wrap;gap:4mm;align-items:center">
+      <div style="font:500 8pt/1.4 'IBM Plex Mono',monospace;color:#9aa4a6">RuffRooms.ie · {{ docDate }}</div>
+      <div style="margin-left:auto;font-size:8.5pt;color:#5c6b70">hello@ruffrooms.ie</div>
+    </div>
+  </section>
+
+</doc-page>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1180&quot;,&quot;height&quot;:&quot;840&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      docDate: "August 2026",
+      heads: ["Phase", "Objective", "Public website", "Business portal", "Admin CMS", "Monetisation"],
+      rows: [
+        {
+          phase: "Phase 1", name: "Launch", window: "0 to 6 months",
+          accent: "#1f6f7a", bg: "#fff",
+          objective: "Build trust, content and SEO",
+          web: "Homepage, accommodation search, county pages, accommodation profiles, Ruff Score, maps, blog, dog-friendly walks, beaches, pubs, favourites",
+          portal: "None. Businesses submit changes by contact form or email",
+          admin: "Add and edit listings, manage images, Ruff Score editor, manage blog, approve content, basic analytics",
+          money: "Free listings for 20 to 50 selected businesses, affiliate links, sponsored blog posts"
+        },
+        {
+          phase: "Phase 2", name: "Growth", window: "6 to 18 months",
+          accent: "#b4553a", bg: "#fdfcfa",
+          objective: "Build engagement and owner self-service",
+          web: "User accounts, saved favourites, dog profiles, email alerts, community photos, optional verified reviews, improved search filters",
+          portal: "Business login, claim listing, edit profile, upload photos, manage dog policies, create offers, view analytics, submit changes for approval",
+          admin: "Review approval, business verification, sponsor management, email campaigns, content moderation",
+          money: "Premium listings (€150 to €400 a year), local sponsorships, featured listings, affiliate revenue"
+        },
+        {
+          phase: "Phase 3", name: "Platform", window: "18 to 36 months",
+          accent: "#0f2b33", bg: "#fff",
+          objective: "Become Ireland’s leading dog-friendly travel platform",
+          web: "AI trip planner, itinerary builder, advanced maps, events, recommendations, mobile optimisation, personalised search",
+          portal: "Dashboard with enquiries, performance reports, seasonal offers, subscription management, API integrations",
+          admin: "Full CRM, sponsor management, reporting dashboard, automated Ruff Score workflows, advanced analytics",
+          money: "Annual subscriptions, brand sponsorships, premium advertising, booking commissions (future), memberships"
+        }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

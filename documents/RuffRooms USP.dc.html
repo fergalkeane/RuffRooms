@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="./doc-page.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
+  doc-page:not(:defined) { visibility: hidden; }
+  a { color: #1f6f7a; text-decoration: none; }
+  a:hover { color: #16545d; text-decoration: underline; }
+</style>
+</helmet>
+
+<doc-page size="a4">
+
+  <!-- ─────────── PAGE 1: cover ─────────── -->
+  <section class="page" id="p1" data-screen-label="01 Cover" style="position:relative;overflow:hidden;background:#0f2b33;font-family:Figtree,system-ui,sans-serif;color:#fff;display:flex;flex-direction:column">
+    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=2000&q=80" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%" />
+    <div style="position:absolute;inset:0;background:linear-gradient(176deg,rgba(9,26,32,.72) 0%,rgba(9,26,32,.34) 44%,rgba(9,26,32,.88) 100%)"></div>
+
+    <div style="position:relative;display:flex;flex-direction:column;height:100%;padding:16mm 16mm 14mm">
+      <div style="display:flex;align-items:baseline;gap:2px;font-family:Newsreader,serif;font-size:26pt;font-weight:600;letter-spacing:-.01em">Ruff<span style="color:#7fd0c6">Rooms</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11pt;color:rgba(255,255,255,.6);margin-left:3px">.ie</span></div>
+
+      <div style="margin-top:auto">
+        <span style="display:inline-block;border:1px solid rgba(255,255,255,.32);border-radius:99px;padding:6px 14px;font:600 8.5pt/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase">1,240 verified stays · 32 counties</span>
+        <h1 style="font-family:Newsreader,serif;font-weight:400;font-size:44pt;line-height:1.02;letter-spacing:-.025em;margin:8mm 0 0;max-width:17em;text-wrap:balance">Find places where dogs are <em style="font-style:italic;color:#ffd9c9">genuinely</em> welcome</h1>
+        <p style="margin:6mm 0 0;font-size:13pt;line-height:1.5;color:rgba(255,255,255,.84);max-width:30em;text-wrap:pretty">Not “pets allowed”. Real policies: the fee, the size limit, whether your dog can sit with you at dinner, confirmed by the property and reviewed by people who actually brought their dog.</p>
+      </div>
+
+      <div style="margin-top:12mm;padding-top:7mm;border-top:1px solid rgba(255,255,255,.2);display:flex;gap:10mm;flex-wrap:wrap">
+        <sc-for list="{{ coverStats }}" as="s" hint-placeholder-count="4">
+          <div>
+            <div style="font-family:Newsreader,serif;font-size:24pt;font-weight:500;line-height:1">{{ s.n }}</div>
+            <div style="font:500 8.5pt/1.4 'IBM Plex Mono',monospace;color:#7fd0c6;margin-top:3px">{{ s.l }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top:8mm;display:flex;align-items:center;gap:5mm;flex-wrap:wrap;font:500 9pt/1.5 'IBM Plex Mono',monospace;color:rgba(255,255,255,.62)">
+        <span>RuffRooms.ie</span><span>·</span><span>Ireland’s dog-friendly travel platform</span><span>·</span><span>{{ docDate }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── PAGE 2: the pitch ─────────── -->
+  <section class="page" id="p2" data-screen-label="02 USPs" style="background:#f7f6f3;font-family:Figtree,system-ui,sans-serif;color:#12242c;padding:11mm 13mm 10mm;display:flex;flex-direction:column">
+
+    <div style="display:flex;align-items:baseline;gap:6mm;padding-bottom:3.5mm;border-bottom:1px solid #ddd9cd">
+      <span style="font-family:Newsreader,serif;font-size:15pt;font-weight:600">RuffRooms<span style="font-family:'IBM Plex Mono',monospace;font-size:8pt;color:#8b979b">.ie</span></span>
+      <span style="margin-left:auto;font:600 8pt/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8b979b">Why we win</span>
+    </div>
+
+    <h2 style="font-family:Newsreader,serif;font-weight:400;font-size:19pt;line-height:1.14;letter-spacing:-.02em;margin:5mm 0 0;max-width:26em;text-wrap:balance">Ireland has thousands of places that accept dogs. Almost none of them tell you what that actually means.</h2>
+
+    <div style="margin-top:4mm;column-count:2;column-gap:7mm;font-size:9pt;line-height:1.5;color:#3d4f55;text-wrap:pretty">
+      <p style="margin:0 0 2.5mm">A dog owner planning a week in Connemara doesn’t need another list of hotels with a paw icon beside the name. They need to know the fee is €15 and not €50, that a 32 kg Labrador won’t be turned away, that the garden gate actually latches, and whether the two of them can eat dinner together. Today that sits in a PDF, contradicted by a booking site, or is discovered on arrival.</p>
+      <p style="margin:0">RuffRooms.ie is the only platform in Ireland built around that gap. Every listing carries a structured, property-confirmed dog policy: charge, maximum number, size and breed limits, indoor access, facilities, re-confirmed every 90 days and scored as a single <strong style="font-weight:700;color:#12242c">Ruff Score</strong>. Reviews come only from guests with a verified dog profile, so ratings reflect what happened when a real dog walked in. We take no commission and hold no payments.</p>
+    </div>
+
+    <div style="margin-top:5mm">
+      <div style="font:600 8pt/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#b4553a">The unique selling points</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:3.5mm">
+        <sc-for list="{{ usps }}" as="u" hint-placeholder-count="8">
+          <div style="background:#fff;border:1px solid #e2e0d8;border-radius:2.5mm;padding:3.5mm 4mm;break-inside:avoid">
+            <div style="display:flex;align-items:baseline;gap:2.5mm">
+              <span style="font:700 8pt/1 'IBM Plex Mono',monospace;color:#1f6f7a">{{ u.n }}</span>
+              <span style="font-family:Newsreader,serif;font-size:11.5pt;font-weight:500;line-height:1.2">{{ u.title }}</span>
+            </div>
+            <div style="font-size:8.5pt;line-height:1.45;color:#5c6b70;margin-top:2mm;text-wrap:pretty">{{ u.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="margin-top:auto;padding-top:5mm;display:flex;gap:4mm;align-items:stretch">
+      <div style="flex:1;background:#0f2b33;color:#fff;border-radius:2.5mm;padding:4.5mm 5mm">
+        <div style="font:600 7.5pt/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7fd0c6">For properties</div>
+        <div style="font-family:Newsreader,serif;font-size:12.5pt;font-weight:500;line-height:1.25;margin-top:2.5mm">Free to list. Zero commission. Enquiries direct to your inbox.</div>
+        <div style="font-size:8.5pt;line-height:1.45;color:rgba(255,255,255,.74);margin-top:2mm">Reach owners already filtering for exactly what you offer.</div>
+      </div>
+      <div style="flex:0 0 58mm;background:#e8e2d6;border-radius:2.5mm;padding:4.5mm 5mm;display:flex;flex-direction:column;justify-content:center">
+        <div style="font:600 7.5pt/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8b7f6c">Get in touch</div>
+        <div style="font-size:10.5pt;font-weight:700;margin-top:2.5mm">hello@ruffrooms.ie</div>
+        <div style="font-size:9pt;color:#5c6b70;margin-top:1mm">ruffrooms.ie/list-your-place</div>
+      </div>
+    </div>
+  </section>
+
+</doc-page>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;860&quot;,&quot;height&quot;:&quot;1180&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      docDate: "August 2026",
+      coverStats: [
+        { n: "1,240", l: "verified stays" },
+        { n: "8,912", l: "dog-owner reviews" },
+        { n: "32", l: "counties covered" },
+        { n: "90 days", l: "policy re-confirmation" }
+      ],
+      usps: [
+        { n: "01", title: "Structured dog policies", body: "Charge, maximum number, size and breed limits, indoor access and facilities: stated as data fields, not a footnote. Listings can’t publish without them." },
+        { n: "02", title: "The Ruff Score", body: "One 0–5 rating across space, facilities, dining access, walks nearby and value of the dog fee. Comparable across 1,240 properties." },
+        { n: "03", title: "Owner-confirmed, guest-verified", body: "Properties re-confirm every 90 days; guests rate whether it held up. Where the two disagree, we re-verify." },
+        { n: "04", title: "Reviews from dog owners only", body: "A verified dog profile and a completed stay are required to review. No noise from guests who left the dog at home." },
+        { n: "05", title: "Filters no OTA has", body: "Two large dogs, enclosed garden, dogs at dinner, no fee, beach within 5 km, all in one query." },
+        { n: "06", title: "The fee, stated up front", body: "The per-dog nightly charge appears on every card, in search results and on the map pin." },
+        { n: "07", title: "Direct enquiry, no commission", body: "Enquiries reach the property’s own inbox with the guest’s dog details attached." },
+        { n: "08", title: "The whole trip, not just the bed", body: "Off-lead beaches with seasonal rules, walks, pubs, cafés and 24-hour vets mapped around every stay." }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
