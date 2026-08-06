@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RuffRooms.ie</title>
+<meta name="robots" content="noindex">
+<script>
+  // The app lives at /home.html while the site sits behind a holding page.
+  // Carry the requested path across as a hash, which is the mode the app runs
+  // in from a .html file. When index.html becomes the app again, point this
+  // back at "/" and the app returns to clean paths on its own.
+  (function () {
+    var base = /\.github\.io$/i.test(location.hostname)
+      ? "/" + (location.pathname.split("/").filter(Boolean)[0] || "")
+      : "";
+    var path = location.pathname;
+    if (base && path.indexOf(base) === 0) path = path.slice(base.length);
+    path = path.split("?")[0] || "/";
+    location.replace(base + "/home.html#" + path);
+  })();
+</script>
+</head>
+<body></body>
+</html>

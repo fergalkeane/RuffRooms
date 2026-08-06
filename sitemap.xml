@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The public site is behind a holding page, so only that page is submitted.
+  Regenerate the full 30-URL sitemap (home, search, 26 stays, 4 places) when
+  the app moves back to index.html and clean paths resume.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ruffrooms.ie/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset>

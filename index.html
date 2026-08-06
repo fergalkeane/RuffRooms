@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RuffRooms.ie is coming soon</title>
+<meta name="description" content="RuffRooms.ie is building Ireland’s most trusted directory of genuinely dog-friendly places to stay. Launching soon.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    background: #0f2b33;
+    overflow-x: hidden;
+    color: #fff;
+    font-family: Figtree, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #7fd0c6; text-decoration: none; }
+  a:hover { color: #a5e0d8; text-decoration: underline; }
+  .wrap { position: relative; z-index: 2; width: 100%; max-width: 620px; }
+
+  /* Ken Burns backdrop: six slides on one 48s loop, 8s apart, each fading up,
+     drifting and scaling before the next crosses over. */
+  .stage { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: #0a1a20; }
+  .stage img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: ken 48s linear infinite;
+  }
+  .stage img:nth-child(2) { animation-delay: 8s; }
+  .stage img:nth-child(3) { animation-delay: 16s; }
+  .stage img:nth-child(4) { animation-delay: 24s; }
+  .stage img:nth-child(5) { animation-delay: 32s; }
+  .stage img:nth-child(6) { animation-delay: 40s; }
+  @keyframes ken {
+    0%     { opacity: 0; transform: scale(1.02) translate3d(0, 0, 0); }
+    2.5%   { opacity: 1; }
+    16.66% { opacity: 1; }
+    19.16% { opacity: 0; }
+    100%   { opacity: 0; transform: scale(1.14) translate3d(-1.5%, -1%, 0); }
+  }
+  /* Scrims sized so the copy stays legible over the bright studio shots. */
+  .scrim {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      linear-gradient(178deg, rgba(10,26,32,.72) 0%, rgba(10,26,32,.5) 42%, rgba(10,26,32,.82) 100%),
+      linear-gradient(96deg, rgba(8,22,28,.78) 0%, rgba(8,22,28,.54) 46%, rgba(8,22,28,.24) 82%, rgba(8,22,28,.14) 100%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stage img { animation: none; opacity: 0; transform: none; }
+    .stage img:first-child { opacity: 1; }
+  }
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid rgba(255,255,255,.26);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font: 600 10.5px/1 'IBM Plex Mono', monospace;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #7fd0c6;
+  }
+  h1 {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(38px, 8vw, 68px);
+    line-height: 1.03;
+    letter-spacing: -.025em;
+    margin: 24px 0 0;
+    text-wrap: balance;
+  }
+  h1 em { font-style: italic; color: #ffd9c9; }
+  p {
+    margin: 20px 0 0;
+    font-size: clamp(16px, 2.2vw, 18.5px);
+    line-height: 1.6;
+    color: rgba(255,255,255,.78);
+    max-width: 34em;
+    text-wrap: pretty;
+  }
+  .rule { height: 1px; background: rgba(255,255,255,.16); margin: 36px 0 26px; }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    font: 500 13px/1.5 'IBM Plex Mono', monospace;
+    color: rgba(255,255,255,.6);
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin-bottom: 40px;
+  }
+  .brand .ie {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,.55);
+    margin-left: 3px;
+  }
+</style>
+</head>
+<body>
+  <div class="stage" aria-hidden="true">
+    <img src="assets/hero-dog-blanket-wide.jpg" alt="" style="object-position:50% 50%">
+    <img src="assets/hero/golden-retriever.jpg" alt="" style="object-position:50% 40%">
+    <img src="assets/hero/toller-grass.jpg" alt="" style="object-position:60% 45%">
+    <img src="assets/hero/spaniel-thankyou.jpg" alt="" style="object-position:50% 35%">
+    <img src="assets/hero/jack-russell.jpg" alt="" style="object-position:55% 45%">
+    <img src="assets/hero/pinscher-paw.jpg" alt="" style="object-position:50% 40%">
+  </div>
+  <div class="scrim"></div>
+
+  <main class="wrap">
+    <div class="brand">Ruff<span style="color:#7fd0c6">Rooms</span><span class="ie">.ie</span></div>
+
+    <span class="kicker">
+      <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" style="display:block">
+        <ellipse cx="12" cy="15.4" rx="5.3" ry="4.3" fill="#7fd0c6"></ellipse>
+        <ellipse cx="5.4" cy="9.2" rx="2.3" ry="2.9" fill="#7fd0c6"></ellipse>
+        <ellipse cx="9.7" cy="5.9" rx="2.3" ry="3.1" fill="#7fd0c6"></ellipse>
+        <ellipse cx="14.3" cy="5.9" rx="2.3" ry="3.1" fill="#7fd0c6"></ellipse>
+        <ellipse cx="18.6" cy="9.2" rx="2.3" ry="2.9" fill="#7fd0c6"></ellipse>
+      </svg>
+      Under construction
+    </span>
+
+    <h1>Something for dogs who are <em>genuinely</em> welcome.</h1>
+
+    <p>We are building Ireland’s most trusted guide to dog-friendly places to stay: the real fee, the size and breed rules, and whether your dog can sit with you at dinner. Verified with each property, reviewed by people who actually brought their dog.</p>
+
+    <div class="rule"></div>
+
+    <div class="meta">
+      <span>Launching 2026</span>
+      <span>32 counties</span>
+      <span><a href="mailto:hello@ruffrooms.ie">hello@ruffrooms.ie</a></span>
+    </div>
+  </main>
+</body>
+</html>
